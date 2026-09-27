@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GFG × MARVEL — Multiverse of Code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ed1d24;--gold:#f6c344;--ink:#080808;--paper:#f4efe7;--muted:#aaa}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:#fff;font-family:Inter,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+a{text-decoration:none;color:inherit}.nav{position:fixed;top:0;left:0;right:0;height:78px;z-index:15;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:linear-gradient(#080808ee,transparent);backdrop-filter:blur(5px)}
+.logo{font-family:"Bebas Neue";font-size:27px;letter-spacing:1px}.logo b{background:var(--red);padding:2px 8px;margin-right:6px}.links{display:flex;gap:30px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}.links a{opacity:.7}.links a:hover{opacity:1;color:var(--gold)}
+.navbtn,.cta{background:var(--red);border:0;color:white;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:14px 22px;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:.25s}.navbtn:hover,.cta:hover{transform:translateY(-3px);box-shadow:0 12px 30px #ed1d2440}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:130px 7vw 70px;overflow:hidden;background:radial-gradient(circle at 70% 45%,#3b1012 0,#16090a 28%,#080808 65%)}
+.hero:after{content:"";position:absolute;width:75vw;height:2px;background:var(--red);right:-20vw;top:62%;transform:rotate(-17deg);box-shadow:0 0 35px var(--red)}
+.burst{position:absolute;right:3%;top:18%;width:48vw;height:48vw;max-width:650px;max-height:650px;background:repeating-conic-gradient(from 0deg,#ffffff05 0 8deg,transparent 8deg 17deg);clip-path:circle(49%);animation:spin 45s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-copy{position:relative;z-index:2;max-width:800px}.eyebrow{color:var(--gold);font-weight:800;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px}
+h1{font-family:"Bebas Neue";font-size:clamp(75px,13vw,190px);line-height:.78;letter-spacing:-2px;text-transform:uppercase;text-shadow:7px 7px 0 #000}
+h1 span{display:block;color:var(--red);-webkit-text-stroke:1px #ff6262;text-shadow:10px 10px 0 #080808}
+.hero p{max-width:520px;margin:30px 0;color:#c8c8c8;line-height:1.7;font-size:15px}.hero-actions{display:flex;gap:14px;align-items:center}.ghost{padding:13px 20px;border:1px solid #ffffff33;font-weight:700;font-size:12px;text-transform:uppercase}.scroll{position:absolute;bottom:35px;left:7vw;font-size:10px;letter-spacing:3px;color:#777}
+section{padding:110px 7vw;position:relative}.section-tag{color:var(--red);font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:13px}.section-title{font-family:"Bebas Neue";font-size:clamp(52px,8vw,100px);line-height:.85;text-transform:uppercase}.paper{background:var(--paper);color:#111}.paper .section-tag{color:#b31318}
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:8vw;align-items:end}.about-copy{font-size:17px;line-height:1.8;color:#343434}.about-copy strong{color:var(--red)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:55px}.card{min-height:300px;padding:28px;background:#111;border:1px solid #ffffff12;position:relative;overflow:hidden;transition:.35s}.card:hover{transform:translateY(-10px);border-color:#ed1d2488}.card:after{content:"";position:absolute;right:-45px;bottom:-55px;width:170px;height:170px;border-radius:50%;background:#ed1d2415}.num{font-family:"Bebas Neue";font-size:60px;color:#333}.card h3{font-family:"Bebas Neue";font-size:38px;margin:35px 0 12px}.card p{font-size:13px;line-height:1.7;color:#999}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);margin-top:55px;border-top:1px solid #222}.time{padding:30px 18px;border-right:1px solid #222}.time:first-child{border-left:1px solid #222}.time b{color:var(--gold);font-size:12px}.time h4{font-family:"Bebas Neue";font-size:29px;margin:12px 0}.time p{color:#888;font-size:12px;line-height:1.6}
+.marquee{background:var(--red);overflow:hidden;white-space:nowrap;padding:13px 0;transform:rotate(-2deg) scale(1.03)}.marquee div{display:inline-block;font-family:"Bebas Neue";font-size:38px;animation:marq 18s linear infinite}@keyframes marq{to{transform:translateX(-50%)}}
+.register{min-height:650px;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,#421013,#080808 62%);overflow:hidden}.register h2{font-family:"Bebas Neue";font-size:clamp(70px,12vw,150px);line-height:.78}.register h2 span{color:var(--red)}.register p{color:#aaa;margin:25px auto;max-width:550px;line-height:1.7}.form{display:flex;max-width:500px;margin:auto;border:1px solid #ffffff25;background:#ffffff08;padding:5px}.form input{flex:1;background:transparent;border:0;outline:0;color:#fff;padding:15px}.form button{background:var(--red);color:#fff;border:0;padding:0 22px;font-weight:800}
+footer{padding:30px 7vw;display:flex;justify-content:space-between;color:#666;font-size:11px;border-top:1px solid #ffffff10}.reveal{opacity:0;transform:translateY(30px);transition:1s}.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){.links{display:none}.nav{height:65px}.navbtn{padding:11px 15px}.hero{padding:120px 6vw 70px}.hero:after{top:65%;right:-50vw}.burst{width:100vw;height:100vw;right:-40vw;top:18%}.hero-copy{max-width:100%}.hero p{font-size:14px}.about{grid-template-columns:1fr;gap:35px}.cards,.timeline{grid-template-columns:1fr}.time{border-left:1px solid #222;border-bottom:1px solid #222}.form{margin:0 10px}.register{padding:90px 6vw}footer{flex-direction:column;gap:12px}}
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.instagram-link {
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.instagram-link:hover {
+    color: #ff3b30;
+    transform: scale(1.15);
+}
+
+.gfg-link img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: 0.3s ease;
+}
+
+.gfg-link:hover img {
+    transform: scale(1.15);
+}
+.whatsapp-link {
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.whatsapp-link:hover {
+    color: #25D366;
+    transform: scale(1.15);
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="logo"><b>GFG</b> STUDENT CHAPTER</div><div class="links"><a href="#mission">Mission</a><a href="#experience">Experience</a><a href="#schedule">Schedule</a></div><a class="navbtn" href="#register">Register</a></nav>
+
+<header class="hero">
+<div class="burst"></div>
+<div class="hero-copy reveal">
+<div class="eyebrow">GeeksForGeeks × Bennett University presents</div>
+<h1>Multiverse<br><span>of Code</span></h1>
+<p>A cinematic coding experience where campus heroes enter a multiverse of challenges, creativity and technology. Assemble your squad. Build something legendary.</p>
+<div class="hero-actions"><a class="cta" href="#register">Join the mission →</a><a class="ghost" href="#experience">Explore event</a></div>
+</div>
+<div class="scroll">↓ SCROLL TO ENTER THE MULTIVERSE</div>
+</header>
+
+<div class="marquee"><div>⚡ ASSEMBLE • CODE • CREATE • CONQUER • ASSEMBLE • CODE • CREATE • CONQUER • </div></div>
+
+<section id="mission" class="paper about">
+<div><div class="section-tag reveal">01 / The mission</div><div class="section-title reveal">Your<br>Origin<br>Story.</div></div>
+<div class="about-copy reveal">Every developer has a moment when ordinary code becomes <strong>extraordinary.</strong> Multiverse of Code turns that moment into an event — part hackathon, part challenge arena, part superhero origin story. <br><br>Come with an idea. Leave with a build, new allies and a story worth telling.</div>
+</section>
+
+<section id="experience">
+<div class="section-tag reveal">02 / Superpowers unlocked</div><div class="section-title reveal">Choose your<br>power.</div>
+<div class="cards">
+<article class="card reveal"><div class="num">01</div><h3>Code Clash</h3><p>Race through logic, DSA and debugging challenges designed to test your problem-solving instincts.</p></article>
+<article class="card reveal"><div class="num">02</div><h3>Build Lab</h3><p>Turn a real-world idea into a working prototype with your squad. Creativity gets superpowers here.</p></article>
+<article class="card reveal"><div class="num">03</div><h3>Hero Pitch</h3><p>Step into the spotlight. Present your build, defend your choices and win the room.</p></article>
+</div>
+</section>
+
+<section id="schedule" class="paper">
+<div class="section-tag reveal">03 / The timeline</div><div class="section-title reveal">One day.<br>Four chapters.</div>
+<div class="timeline">
+<div class="time reveal"><b>10:00 AM</b><h4>Assembly</h4><p>Check-in, team formation and mission briefing.</p></div>
+<div class="time reveal"><b>11:00 AM</b><h4>Ignition</h4><p>Challenges unlock. The build begins.</p></div>
+<div class="time reveal"><b>02:30 PM</b><h4>Showdown</h4><p>Demo your solution before the panel.</p></div>
+<div class="time reveal"><b>04:00 PM</b><h4>Finale</h4><p>Results, recognition and the next origin story.</p></div>
+</div>
+</section>
+
+<section id="register" class="register">
+<div class="reveal"><div class="eyebrow">Your universe is waiting</div><h2>READY TO<br><span>ASSEMBLE?</span></h2><p>Registration details will be announced by the GFG Student Chapter, Bennett University. Drop your email to get the mission briefing.</p>
+<form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='YOU’RE IN ✓';"><input type="email" placeholder="your@email.com" required><button>Notify me</button></form></div>
+</section>
+
+<footer><div class="socials">
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/geeksforgeeks_bu/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- GeeksforGeeks -->
+    <a href="https://geeksforgeeksbu.vercel.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAac7NSffNVzZb4uTZofW15cPeYNae-bg-nFlB_KVRGLJyu_IDeXnE3MHduSjJA_aem_uV9D0ttouYS0giOxPCh-0g" target="_blank" rel="noopener noreferrer" class="gfg-link">
+        <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks">
+    </a>
+    <!-- WhatsApp -->
+    <a href="https://chat.whatsapp.com/CxH8wU99FyxBh7ZrUJTHXY?mode=wwt&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadFiW4pr65pOgd_JlQKUPbLlVVc8EXPpsto5-wN9r4zUv1ghOepWl41JQTOow_aem_AEGaTDr8yT6fn8I2IKW7LA" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</div>
+</a><span>© 2026 GFG Student Chapter · Bennett University</span><span>Built for the next generation of builders.</span></footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
